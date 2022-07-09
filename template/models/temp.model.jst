@@ -1,0 +1,20 @@
+const mongoose = require('mongoose');
+const { toJSON, paginate } = require('./plugins');
+
+const {{temp}}Schema = mongoose.Schema(
+  {{FIELDS}},
+  {
+    timestamps: true,
+  }
+);
+
+// add plugin that converts mongoose to json
+{{temp}}Schema.plugin(toJSON);
+{{temp}}Schema.plugin(paginate);
+
+/**
+ * @typedef {{Temp}}
+ */
+const {{Temp}} = mongoose.model('{{Temp}}', {{temp}}Schema);
+
+module.exports = {{Temp}};
